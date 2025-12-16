@@ -31,8 +31,10 @@ This guide explains how to deploy the LLMBasedOS Token site to Cloudflare Pages.
    Build command: npm run build
    Build output directory: .next
    Root directory: (leave empty)
-   Node version: 18
+   Node version: 20
    ```
+
+   **Important**: The build command now automatically cleans cache files to avoid the 25MB limit.
 
 4. **Environment Variables (Optional)**
    Add these if you want custom RPC endpoints:
