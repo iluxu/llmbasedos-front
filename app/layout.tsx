@@ -15,13 +15,23 @@ export const metadata: Metadata = {
     description: 'The native token for a sovereign agent operating system.',
     type: 'website',
     locale: 'en_US',
-    images: ['/og-image.png'],
+    images: [{
+      url: '/og-image.svg',
+      width: 1200,
+      height: 630,
+      alt: 'LLMBasedOS Token',
+    }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'LLMBasedOS Token',
     description: 'The native token for a sovereign agent operating system.',
-    images: ['/og-image.png'],
+    images: [{
+      url: '/og-image.svg',
+      width: 1200,
+      height: 630,
+      alt: 'LLMBasedOS Token',
+    }],
   },
   metadataBase: new URL('https://llmbasedos.com'),
   robots: {
