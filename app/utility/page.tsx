@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Token Utility | LLMBasedOS Token',
-  description: 'Planned utility and use cases for the LLMBasedOS Token. Progressive, realistic, utility-first approach.',
+  title: 'Capabilities | LLMBasedOS',
+  description: 'Operational capabilities and building blocks for LLMBasedOS arcs and sentinels.',
 };
 
 export default function UtilityPage() {
@@ -10,106 +10,77 @@ export default function UtilityPage() {
     <div className="min-h-screen py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Token Utility
+          <h1 className="text-4xl md:text-5xl font-display font-semibold text-slate-900 mb-4">
+            Capabilities
           </h1>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto">
-            Progressive utility design for sustainable ecosystem growth
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            The building blocks behind arcs, sentinels, and real-time workflows
+          </p>
+          <p className="text-base text-slate-500 mt-2">
+            Les briques pour construire des agents operationnels
           </p>
         </div>
 
-        {/* Utility Introduction */}
-        <div className="mb-16 max-w-3xl mx-auto">
-          <div className="p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent">
-            <p className="text-white/80 text-lg leading-relaxed mb-4">
-              Token utility is designed to evolve progressively as the LLMBasedOS ecosystem matures.
-              Each phase builds on the previous, adding depth without complexity.
-            </p>
-            <p className="text-white/60 text-sm leading-relaxed">
-              All utility plans are subject to change based on ecosystem development and community feedback.
-              No guarantees are made about timing or implementation.
-            </p>
-          </div>
-        </div>
-
-        {/* Utility Phases */}
-        <div className="space-y-12">
-          <PhaseCard
-            phase="Phase 0"
-            title="Foundation"
-            status="current"
-            description="Establishing the token's existence and identity on Base mainnet."
+        <div className="grid lg:grid-cols-2 gap-10">
+          <CapabilityCard
+            title="Signal Capture"
+            subtitle="Collecte de signaux"
+            description="Scraping, API polling, webhooks, and data ingestion pipelines."
             features={[
-              'On-chain presence and verifiable existence',
-              'Transparent smart contract deployment',
-              'Auditable transaction history',
-              'Open standard ERC20 implementation',
+              'Marketplace searches and saved filters',
+              'Social content extraction (posts, stories, reels)',
+              'Market data monitoring and alerts',
+              'Custom connectors for internal APIs',
             ]}
           />
-
-          <PhaseCard
-            phase="Phase 1"
-            title="Access & Recognition"
-            status="planned"
-            timeframe="Q1 2026"
-            description="Token gating for early features, builds, and community participation."
+          <CapabilityCard
+            title="Enrichment"
+            subtitle="Enrichissement"
+            description="OCR, classification, deduplication, and semantic tagging."
             features={[
-              'Early access to LLMBasedOS preview builds',
-              'Priority access to new Arc releases',
-              'Token-gated Discord channels and resources',
-              'Early notification of ecosystem updates',
+              'Image OCR for stories and listings',
+              'Entity tagging and scoring',
+              'Noise filtering and relevance ranking',
+              'Session pools and proxy governance',
             ]}
           />
-
-          <PhaseCard
-            phase="Phase 2"
-            title="Capacity & Quotas"
-            status="planned"
-            timeframe="Q2 2026"
-            description="Capacity-based utility tied to holding thresholds."
+          <CapabilityCard
+            title="Routing"
+            subtitle="Routage"
+            description="LLM routing across models, budgets, and policies."
             features={[
-              'Tiered compute quota allocations',
-              'Priority queue access for resource-intensive operations',
-              'Extended session limits and persistence',
-              'Enhanced API rate limits',
+              'Model selection per task type',
+              'Budget-aware orchestration',
+              'Human-in-the-loop checkpoints',
+              'Context-aware retries and fallbacks',
             ]}
           />
-
-          <PhaseCard
-            phase="Phase 3"
-            title="Ecosystem Economics"
-            status="future"
-            timeframe="2026+"
-            description="Deeper integration into LLMBasedOS marketplace and licensing mechanics."
+          <CapabilityCard
+            title="Delivery"
+            subtitle="Diffusion"
+            description="Push events to apps, dashboards, and alert channels."
             features={[
-              'Arc marketplace transactions',
-              'License acquisition and management',
-              'Usage receipt settlements',
-              'Reputation and attestation primitives',
+              'Flutter push notifications',
+              'Slack / Telegram / webhook delivery',
+              'EventBus streaming',
+              'Audit logs and execution traces',
             ]}
           />
         </div>
 
-        {/* Important Notes */}
-        <div className="mt-16 space-y-4">
-          <div className="p-6 rounded-xl bg-yellow-500/10 border border-yellow-500/30">
-            <h3 className="text-lg font-semibold text-yellow-200 mb-3 flex items-center gap-2">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-              </svg>
-              Important Disclaimer
-            </h3>
-            <p className="text-yellow-200/80 text-sm leading-relaxed">
-              Utility plans are directional and subject to change. Implementation timelines are estimates.
-              Token utility does not constitute a promise of financial returns or guaranteed value.
+        <div className="mt-16 grid md:grid-cols-2 gap-6">
+          <div className="rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm">
+            <h3 className="text-xl font-display font-semibold text-slate-900 mb-3">Operating Principles</h3>
+            <p className="text-slate-600">
+              Every capability ships with guardrails: rate limits, session health, and auditability.
+              We focus on dependable pipelines before adding scale.
             </p>
           </div>
-
-          <div className="p-6 rounded-xl bg-primary-500/10 border border-primary-500/30">
-            <h3 className="text-lg font-semibold text-white mb-3">Design Philosophy</h3>
-            <p className="text-white/70 text-sm leading-relaxed">
-              Utility is designed to be earned, not extracted. Holding thresholds unlock access and capacity,
-              but value comes from participation in a functional operating system, not speculation.
+          <div className="rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm">
+            <h3 className="text-xl font-display font-semibold text-slate-900 mb-3">Bilingual by design</h3>
+            <p className="text-slate-600">
+              Interfaces, alerts, and dashboards are delivered in English and French by default.
+              We can extend localization to any market.
             </p>
           </div>
         </div>
@@ -118,45 +89,28 @@ export default function UtilityPage() {
   );
 }
 
-interface PhaseCardProps {
-  phase: string;
+interface CapabilityCardProps {
   title: string;
-  status: 'current' | 'planned' | 'future';
-  timeframe?: string;
+  subtitle: string;
   description: string;
   features: string[];
 }
 
-function PhaseCard({ phase, title, status, timeframe, description, features }: PhaseCardProps) {
-  const statusColors = {
-    current: 'bg-green-500/20 border-green-500/50 text-green-400',
-    planned: 'bg-primary-500/20 border-primary-500/50 text-primary-400',
-    future: 'bg-white/10 border-white/30 text-white/60',
-  };
-
+function CapabilityCard({ title, subtitle, description, features }: CapabilityCardProps) {
   return (
-    <div className="border border-white/10 rounded-2xl p-8 bg-gradient-to-br from-white/5 to-transparent">
-      <div className="flex flex-wrap items-center gap-3 mb-4">
-        <span className="text-sm font-semibold text-primary-400 uppercase tracking-wide">
-          {phase}
+    <div className="border border-black/10 rounded-2xl p-8 bg-white/80 shadow-sm">
+      <div className="flex items-center justify-between mb-4">
+        <span className="text-sm font-semibold text-primary-600 uppercase tracking-wide">
+          {subtitle}
         </span>
-        <span className={`px-3 py-1 rounded-full border text-xs font-medium uppercase tracking-wide ${statusColors[status]}`}>
-          {status}
-        </span>
-        {timeframe && (
-          <span className="text-sm text-white/50">
-            {timeframe}
-          </span>
-        )}
       </div>
-
-      <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
-      <p className="text-white/70 leading-relaxed mb-6">{description}</p>
+      <h3 className="text-2xl font-display font-semibold text-slate-900 mb-3">{title}</h3>
+      <p className="text-slate-600 leading-relaxed mb-6">{description}</p>
 
       <ul className="space-y-3">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-start gap-3 text-white/80">
-            <svg className="w-5 h-5 text-primary-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <li key={index} className="flex items-start gap-3 text-slate-600">
+            <svg className="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span>{feature}</span>

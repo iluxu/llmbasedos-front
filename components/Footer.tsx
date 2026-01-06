@@ -1,48 +1,39 @@
-import { TOKEN_EXPLORER_URL } from '@/lib/chain';
-
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/10 bg-black/50 mt-20">
+    <footer className="border-t border-black/10 bg-[#f6f1e7] mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-sm">
                 <span className="text-white font-bold text-sm">LB</span>
               </div>
-              <span className="font-bold text-white">LLMBasedOS Token</span>
+              <span className="font-bold text-slate-900">LLMBasedOS</span>
             </div>
-            <p className="text-white/60 text-sm leading-relaxed max-w-md">
-              The native token for a sovereign agent operating system. Built on Base,
-              designed for utility, aligned with long-term vision.
+            <p className="text-slate-600 text-sm leading-relaxed max-w-md">
+              Agent operations OS for MCP arcs, sentinels, and workflows. Build once, run continuously,
+              and connect your apps to live signals.
             </p>
           </div>
 
-          {/* Links */}
           <div>
-            <h3 className="font-semibold text-white mb-4 text-sm uppercase tracking-wide">
+            <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wide">
               Resources
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a
-                  href={TOKEN_EXPLORER_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Basescan
+                <a href="/docs" className="text-slate-600 hover:text-slate-900 transition-colors">
+                  Docs
                 </a>
               </li>
               <li>
                 <a
-                  href="https://github.com/llmbasedos"
+                  href="https://github.com/iluxu/llmbasedos"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/60 hover:text-white transition-colors"
+                  className="text-slate-600 hover:text-slate-900 transition-colors"
                 >
                   GitHub
                 </a>
@@ -52,7 +43,7 @@ export function Footer() {
                   href="https://x.com/llmbasedos"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/60 hover:text-white transition-colors"
+                  className="text-slate-600 hover:text-slate-900 transition-colors"
                 >
                   X (Twitter)
                 </a>
@@ -60,32 +51,34 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
           <div>
-            <h3 className="font-semibold text-white mb-4 text-sm uppercase tracking-wide">
-              Legal
+            <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wide">
+              Contact
             </h3>
             <ul className="space-y-2 text-sm">
-              <li className="text-white/60">
-                Not financial advice
+              <li>
+                <a
+                  href="mailto:hello@llmbasedos.com"
+                  className="text-slate-600 hover:text-slate-900 transition-colors"
+                >
+                  hello@llmbasedos.com
+                </a>
               </li>
-              <li className="text-white/60">
-                DYOR
-              </li>
+              <li className="text-slate-600">Paris - Remote</li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-white/40 text-sm">
-            © {currentYear} LLMBasedOS. Standard-first. Hype-last.
+        <div className="mt-12 pt-8 border-t border-black/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-slate-500 text-sm">
+            (c) {currentYear} LLMBasedOS. Build once. Run forever.
           </p>
           <div className="flex items-center gap-6">
             <a
-              href="https://github.com/llmbasedos"
+              href="https://github.com/iluxu/llmbasedos"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/40 hover:text-white transition-colors"
+              className="text-slate-500 hover:text-slate-900 transition-colors"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -99,7 +92,7 @@ export function Footer() {
               href="https://x.com/llmbasedos"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/40 hover:text-white transition-colors"
+              className="text-slate-500 hover:text-slate-900 transition-colors"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
