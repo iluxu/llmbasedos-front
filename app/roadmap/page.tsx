@@ -100,7 +100,7 @@ export default function RoadmapPage() {
           </div>
         </section>
 
-        <div className="p-8 rounded-2xl bg-[#f7f4ec] border border-black/10">
+        <div className="p-8 rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(247,244,236,0.9))] border border-black/10">
           <h3 className="text-lg font-display font-semibold text-slate-900 mb-3 flex items-center gap-2">
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -127,7 +127,7 @@ interface PrincipleCardProps {
 
 function PrincipleCard({ title, description, icon }: PrincipleCardProps) {
   return (
-    <div className="p-6 rounded-xl border border-black/10 bg-white/80 shadow-sm">
+    <div className="p-6 rounded-xl border border-black/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(247,244,236,0.9))] shadow-sm">
       <div className="text-primary-600 mb-4">{icon}</div>
       <h3 className="text-xl font-semibold text-slate-900 mb-3">{title}</h3>
       <p className="text-slate-600 leading-relaxed">{description}</p>

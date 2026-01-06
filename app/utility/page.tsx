@@ -69,14 +69,14 @@ export default function UtilityPage() {
         </div>
 
         <div className="mt-16 grid md:grid-cols-2 gap-6">
-          <div className="rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm">
+          <div className="rounded-2xl border border-black/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(247,244,236,0.9))] p-6 shadow-sm">
             <h3 className="text-xl font-display font-semibold text-slate-900 mb-3">Operating Principles</h3>
             <p className="text-slate-600">
               Every capability ships with guardrails: rate limits, session health, and auditability.
               We focus on dependable pipelines before adding scale.
             </p>
           </div>
-          <div className="rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm">
+          <div className="rounded-2xl border border-black/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(247,244,236,0.9))] p-6 shadow-sm">
             <h3 className="text-xl font-display font-semibold text-slate-900 mb-3">Bilingual by design</h3>
             <p className="text-slate-600">
               Interfaces, alerts, and dashboards are delivered in English and French by default.
@@ -98,7 +98,7 @@ interface CapabilityCardProps {
 
 function CapabilityCard({ title, subtitle, description, features }: CapabilityCardProps) {
   return (
-    <div className="border border-black/10 rounded-2xl p-8 bg-white/80 shadow-sm">
+    <div className="border border-black/10 rounded-2xl p-8 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(247,244,236,0.9))] shadow-sm">
       <div className="flex items-center justify-between mb-4">
         <span className="text-sm font-semibold text-primary-600 uppercase tracking-wide">
           {subtitle}

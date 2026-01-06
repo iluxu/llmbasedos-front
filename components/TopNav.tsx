@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 const navItems = [
   { label: 'Home', href: '/' },
+  { label: 'Install', href: '/#install' },
   { label: 'Platform', href: '/token' },
   { label: 'Capabilities', href: '/utility' },
   { label: 'Roadmap', href: '/roadmap' },
@@ -49,6 +50,14 @@ export function TopNav() {
               EN / FR
             </span>
             <a
+              href="https://github.com/iluxu/llmbasedos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors"
+            >
+              GitHub
+            </a>
+            <a
               href="/#contact"
               className="px-4 py-2 rounded-full bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition-colors"
             >
@@ -87,6 +96,14 @@ export function TopNav() {
                 {item.label}
               </Link>
             ))}
+            <a
+              href="https://github.com/iluxu/llmbasedos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center justify-center px-4 py-2 rounded-full border border-black/10 bg-white text-slate-800 text-sm font-semibold"
+            >
+              GitHub
+            </a>
             <a
               href="/#contact"
               className="mt-3 inline-flex items-center justify-center px-4 py-2 rounded-full bg-slate-900 text-white text-sm font-semibold"

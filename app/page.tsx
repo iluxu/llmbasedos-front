@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { TOKEN_ADDRESS, TOKEN_EXPLORER_URL } from '@/lib/chain';
 
 export default function Home() {
   return (
@@ -6,6 +7,8 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(20,184,166,0.18),transparent_55%),radial-gradient(circle_at_top_right,rgba(249,115,22,0.18),transparent_45%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(246,241,231,0.8))]" />
+        <div className="absolute -left-32 top-10 h-72 w-72 rounded-full bg-primary-300/40 blur-3xl" />
+        <div className="absolute right-10 top-32 h-64 w-64 rounded-full bg-accent-300/40 blur-3xl" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <div className="grid lg:grid-cols-[1.1fr,0.9fr] gap-12 items-center">
@@ -25,8 +28,16 @@ export default function Home() {
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
-                  href="/#contact"
+                  href="https://github.com/iluxu/llmbasedos"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 py-3 rounded-full bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors"
+                >
+                  Install from GitHub
+                </a>
+                <a
+                  href="/#contact"
+                  className="px-6 py-3 rounded-full border border-black/10 bg-white text-slate-800 font-semibold hover:bg-white/70 transition-colors"
                 >
                   Request access
                 </a>
@@ -34,7 +45,7 @@ export default function Home() {
                   href="/docs"
                   className="px-6 py-3 rounded-full border border-black/10 bg-white/70 text-slate-800 font-semibold hover:bg-white transition-colors"
                 >
-                  Explore docs
+                  Docs
                 </Link>
               </div>
 
@@ -70,6 +81,71 @@ export default function Home() {
               <p className="mt-5 text-sm text-slate-500">
                 One gateway, many arcs. Real-time ops built on MCP and WebSockets.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="install" className="relative py-20">
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,#f6f1e7,rgba(255,255,255,0.85))]" />
+        <div className="absolute left-0 top-12 h-40 w-40 rounded-full bg-primary-200/60 blur-3xl" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-[1.1fr,0.9fr] gap-10 items-start">
+            <div className="rounded-3xl border border-black/10 bg-white/90 p-8 shadow-xl shadow-black/5">
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-500">Install</p>
+              <h2 className="mt-4 text-3xl md:text-4xl font-display font-semibold">
+                Clone and run in minutes.
+              </h2>
+              <p className="mt-4 text-lg text-slate-600">
+                Start with the full stack, then attach your arcs and sentinels.
+              </p>
+              <p className="mt-2 text-base text-slate-500">
+                Installation directe depuis GitHub. Deploiement en local ou serveur.
+              </p>
+              <div className="mt-6 bg-slate-900 text-emerald-100 rounded-2xl p-5 font-mono text-sm space-y-2">
+                <p>$ git clone https://github.com/iluxu/llmbasedos.git</p>
+                <p>$ cd llmbasedos</p>
+                <p>$ docker compose up -d</p>
+                <p>$ scripts/luca-shell.sh</p>
+              </div>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="https://github.com/iluxu/llmbasedos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2 rounded-full bg-primary-600 text-white text-sm font-semibold hover:bg-primary-700 transition-colors"
+                >
+                  Open repo
+                </a>
+                <Link
+                  href="/docs"
+                  className="px-5 py-2 rounded-full border border-black/10 bg-white text-slate-800 text-sm font-semibold hover:bg-white/70 transition-colors"
+                >
+                  Install docs
+                </Link>
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-black/10 bg-white/80 p-8 shadow-lg shadow-black/5">
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-500">Token</p>
+              <h3 className="mt-3 text-2xl font-display font-semibold text-slate-900">
+                LLMBasedOS Token on Base
+              </h3>
+              <p className="mt-3 text-slate-600">
+                The token anchors long term alignment and future access primitives.
+              </p>
+              <div className="mt-6 space-y-4">
+                <TokenLine label="Contract" value={TOKEN_ADDRESS} />
+                <a
+                  href={TOKEN_EXPLORER_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary-700 hover:text-primary-800 transition-colors text-sm font-semibold"
+                >
+                  View on Basescan
+                  <span className="text-xs">(external)</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -284,7 +360,7 @@ interface MiniStatProps {
 
 function MiniStat({ title, detail, sub }: MiniStatProps) {
   return (
-    <div className="rounded-2xl border border-black/10 bg-white/70 p-4 shadow-sm">
+    <div className="rounded-2xl border border-black/10 bg-[linear-gradient(140deg,rgba(255,255,255,0.95),rgba(247,244,236,0.9))] p-4 shadow-sm">
       <p className="text-xs uppercase tracking-wide text-slate-500">{title}</p>
       <p className="text-lg font-semibold text-slate-900">{detail}</p>
       <p className="text-sm text-slate-500">{sub}</p>
@@ -300,7 +376,7 @@ interface FeatureCardProps {
 
 function FeatureCard({ title, subtitle, description }: FeatureCardProps) {
   return (
-    <div className="rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm">
+    <div className="rounded-2xl border border-black/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(247,244,236,0.85))] p-6 shadow-sm">
       <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
       <p className="text-sm uppercase tracking-wide text-slate-400 mt-1">{subtitle}</p>
       <p className="text-slate-600 mt-4">{description}</p>
@@ -331,7 +407,7 @@ interface StepCardProps {
 
 function StepCard({ step, title, description, sub }: StepCardProps) {
   return (
-    <div className="rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm">
+    <div className="rounded-2xl border border-black/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(247,244,236,0.9))] p-6 shadow-sm">
       <div className="text-xs uppercase tracking-[0.2em] text-slate-400">{step}</div>
       <h3 className="text-2xl font-semibold text-slate-900 mt-4">{title}</h3>
       <p className="text-slate-600 mt-3">{description}</p>
@@ -348,10 +424,24 @@ interface UseCaseCardProps {
 
 function UseCaseCard({ title, subtitle, description }: UseCaseCardProps) {
   return (
-    <div className="rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm">
+    <div className="rounded-2xl border border-black/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(247,244,236,0.9))] p-6 shadow-sm">
       <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
       <p className="text-sm uppercase tracking-wide text-slate-400 mt-1">{subtitle}</p>
       <p className="text-slate-600 mt-4">{description}</p>
+    </div>
+  );
+}
+
+interface TokenLineProps {
+  label: string;
+  value: string;
+}
+
+function TokenLine({ label, value }: TokenLineProps) {
+  return (
+    <div>
+      <p className="text-xs uppercase tracking-wide text-slate-400">{label}</p>
+      <p className="font-mono text-xs text-slate-700 break-all">{value}</p>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { FAQ } from '@/components/FAQ';
 import { ReferenceItem } from '@/components/ReferenceItem';
+import { TOKEN_ADDRESS, OWNER_ADDRESS, TOKEN_EXPLORER_URL, DEPLOYMENT_TX_URL } from '@/lib/chain';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -48,19 +49,91 @@ export default function DocsPage() {
 
         <section className="mb-16">
           <h2 className="text-3xl font-display font-semibold text-slate-900 mb-6">Quick Reference</h2>
-          <div className="border border-black/10 rounded-2xl p-8 bg-white/80 shadow-sm">
+          <div className="border border-black/10 rounded-2xl p-8 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(247,244,236,0.9))] shadow-sm">
             <div className="grid md:grid-cols-2 gap-6">
               <ReferenceItem label="Gateway" value="MCP WebSocket (private)" />
               <ReferenceItem label="Runtime" value="Docker + Supervisor" />
               <ReferenceItem label="Clients" value="Flutter - Webhooks - Dashboards" />
               <ReferenceItem label="Events" value="EventBus + push alerts" />
+              <ReferenceItem label="GitHub Repo" value="https://github.com/iluxu/llmbasedos" />
             </div>
           </div>
         </section>
 
         <section className="mb-16">
+          <h2 className="text-3xl font-display font-semibold text-slate-900 mb-6">Install from GitHub</h2>
+          <div className="border border-black/10 rounded-2xl p-8 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(247,244,236,0.9))] shadow-sm">
+            <div className="grid lg:grid-cols-[1.1fr,0.9fr] gap-8 items-start">
+              <div>
+                <p className="text-slate-600 text-lg">
+                  Clone the repo, bring up the stack, and attach your arcs.
+                </p>
+                <p className="text-slate-500 text-sm mt-2">
+                  Installation directe depuis GitHub, en local ou serveur.
+                </p>
+                <div className="mt-6 bg-slate-900 text-emerald-100 rounded-2xl p-5 font-mono text-sm space-y-2">
+                  <p>$ git clone https://github.com/iluxu/llmbasedos.git</p>
+                  <p>$ cd llmbasedos</p>
+                  <p>$ docker compose up -d</p>
+                  <p>$ scripts/luca-shell.sh</p>
+                </div>
+                <div className="mt-5 flex gap-3">
+                  <a
+                    href="https://github.com/iluxu/llmbasedos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2 rounded-full bg-primary-600 text-white text-sm font-semibold hover:bg-primary-700 transition-colors"
+                  >
+                    Open repo
+                  </a>
+                  <a
+                    href="/#contact"
+                    className="px-5 py-2 rounded-full border border-black/10 bg-white text-slate-800 text-sm font-semibold hover:bg-white/70 transition-colors"
+                  >
+                    Request help
+                  </a>
+                </div>
+              </div>
+              <div className="rounded-2xl border border-black/10 bg-white/70 p-6">
+                <h3 className="text-lg font-semibold text-slate-900">Where it runs</h3>
+                <ul className="mt-4 space-y-3 text-slate-600">
+                  <li>Docker + Supervisor runtime</li>
+                  <li>WebSocket MCP gateway</li>
+                  <li>Arcs in dedicated containers</li>
+                  <li>EventBus for alerts and apps</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-16">
+          <h2 className="text-3xl font-display font-semibold text-slate-900 mb-6">Token</h2>
+          <div className="border border-black/10 rounded-2xl p-8 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(247,244,236,0.9))] shadow-sm">
+            <p className="text-slate-600 mb-6">
+              The LLMBasedOS token anchors alignment and long term access. Details are on-chain.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              <ReferenceItem label="Token Contract" value={TOKEN_ADDRESS} copyable />
+              <ReferenceItem label="Owner Address" value={OWNER_ADDRESS} copyable />
+              <ReferenceItem label="Deployment Tx" value={DEPLOYMENT_TX_URL} />
+              <ReferenceItem label="Explorer" value={TOKEN_EXPLORER_URL} />
+            </div>
+            <a
+              href={TOKEN_EXPLORER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-primary-700 hover:text-primary-800 transition-colors text-sm font-semibold mt-6"
+            >
+              View on Basescan
+              <span className="text-xs">(external)</span>
+            </a>
+          </div>
+        </section>
+
+        <section className="mb-16">
           <h2 className="text-3xl font-display font-semibold text-slate-900 mb-6">Core MCP Methods</h2>
-          <div className="border border-black/10 rounded-2xl p-8 bg-white/80 shadow-sm">
+          <div className="border border-black/10 rounded-2xl p-8 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(247,244,236,0.9))] shadow-sm">
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl font-semibold text-slate-900 mb-4">Capability Surface</h3>

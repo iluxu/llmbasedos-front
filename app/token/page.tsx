@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { TOKEN_ADDRESS, OWNER_ADDRESS, TOKEN_EXPLORER_URL } from '@/lib/chain';
 
 export const metadata: Metadata = {
   title: 'Platform | LLMBasedOS',
@@ -49,7 +50,7 @@ export default function TokenPage() {
 
         <section className="mb-12">
           <h2 className="text-3xl font-display font-semibold text-slate-900 mb-6">Operational Guardrails</h2>
-          <div className="border border-black/10 rounded-2xl p-8 bg-white/80 shadow-sm">
+          <div className="border border-black/10 rounded-2xl p-8 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(247,244,236,0.9))] shadow-sm">
             <div className="space-y-6">
               <GuardrailItem
                 title="Session Governance"
@@ -79,6 +80,28 @@ export default function TokenPage() {
             <ModeCard title="Enterprise" description="Multi-tenant clusters with observability and policy layers." />
           </div>
         </section>
+
+        <section className="mb-12">
+          <h2 className="text-3xl font-display font-semibold text-slate-900 mb-6">Token Reference</h2>
+          <div className="border border-black/10 rounded-2xl p-8 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(247,244,236,0.9))] shadow-sm">
+            <p className="text-slate-600 mb-6">
+              On-chain details for the LLMBasedOS token on Base mainnet.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              <TokenLine label="Token Contract" value={TOKEN_ADDRESS} />
+              <TokenLine label="Owner Address" value={OWNER_ADDRESS} />
+            </div>
+            <a
+              href={TOKEN_EXPLORER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-primary-700 hover:text-primary-800 transition-colors text-sm font-semibold mt-6"
+            >
+              View on Basescan
+              <span className="text-xs">(external)</span>
+            </a>
+          </div>
+        </section>
       </div>
     </div>
   );
@@ -92,7 +115,7 @@ interface BlockCardProps {
 
 function BlockCard({ title, subtitle, description }: BlockCardProps) {
   return (
-    <div className="border border-black/10 rounded-2xl p-8 bg-white/80 shadow-sm">
+    <div className="border border-black/10 rounded-2xl p-8 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(247,244,236,0.9))] shadow-sm">
       <p className="text-xs uppercase tracking-wide text-slate-400">{subtitle}</p>
       <h3 className="text-2xl font-semibold text-slate-900 mt-3 mb-3">{title}</h3>
       <p className="text-slate-600">{description}</p>
@@ -128,9 +151,23 @@ interface ModeCardProps {
 
 function ModeCard({ title, description }: ModeCardProps) {
   return (
-    <div className="border border-black/10 rounded-2xl p-6 bg-white/80 shadow-sm">
+    <div className="border border-black/10 rounded-2xl p-6 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(247,244,236,0.9))] shadow-sm">
       <h3 className="text-xl font-semibold text-slate-900 mb-2">{title}</h3>
       <p className="text-slate-600">{description}</p>
+    </div>
+  );
+}
+
+interface TokenLineProps {
+  label: string;
+  value: string;
+}
+
+function TokenLine({ label, value }: TokenLineProps) {
+  return (
+    <div>
+      <p className="text-xs uppercase tracking-wide text-slate-400">{label}</p>
+      <p className="font-mono text-xs text-slate-700 break-all">{value}</p>
     </div>
   );
 }
