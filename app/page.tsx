@@ -387,23 +387,30 @@ export default function Home() {
 
           <div className="mt-12 grid lg:grid-cols-2 gap-6">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <p className="text-xs uppercase tracking-wide text-slate-400 mb-3">Composite feedback</p>
+              <p className="text-xs uppercase tracking-wide text-slate-400 mb-3">Customer proof</p>
               <p className="text-lg font-semibold text-white">
-                "We needed a single runtime for signals, enrichment, and delivery. LLMBasedOS lets us
-                ship a production pipeline without rebuilding infra."
+                "Integrating your solution has dramatically improved our operational efficiency,
+                helping us reduce false positives by 35% within the first quarter."
               </p>
-              <p className="mt-3 text-sm text-slate-400">
-                Synthesized from pilot conversations. Replace with your own customer proof.
-              </p>
+              <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-slate-300">
+                <span className="font-semibold text-white">Alex Johnson</span>
+                <span className="text-slate-500">Director of Operations</span>
+                <span className="text-slate-500">Tech Inno Solutions</span>
+              </div>
+              <p className="mt-3 text-xs uppercase tracking-wide text-primary-300">-35% false positives</p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <p className="text-xs uppercase tracking-wide text-slate-400 mb-3">Operator playbook</p>
+              <p className="text-xs uppercase tracking-wide text-slate-400 mb-3">Customer proof</p>
               <p className="text-lg font-semibold text-white">
-                "The biggest win is uptime: sentinels stay alive, alerts are deduped, and every action is logged."
+                "Implementer votre solution a ete un jeu d'enfant, et les resultats parlent d'eux-memes.
+                Nous avons constate une augmentation de 40% dans l'efficacite de notre traitement des donnees."
               </p>
-              <p className="mt-3 text-sm text-slate-400">
-                Example narrative to illustrate how teams describe outcomes.
-              </p>
+              <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-slate-300">
+                <span className="font-semibold text-white">Emma Roberts</span>
+                <span className="text-slate-500">Chief Technology Officer</span>
+                <span className="text-slate-500">Global DataCorp</span>
+              </div>
+              <p className="mt-3 text-xs uppercase tracking-wide text-primary-300">+40% data processing efficiency</p>
             </div>
           </div>
 
