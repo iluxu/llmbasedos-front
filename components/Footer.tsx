@@ -16,6 +16,9 @@ export function Footer() {
               Agent operations OS for MCP arcs, sentinels, and workflows. Build once, run continuously,
               and connect your apps to live signals.
             </p>
+            <p className="text-slate-500 text-sm leading-relaxed max-w-md mt-3">
+              OS d'operations pour arcs MCP, sentinels et workflows. Construisez une fois, executez en continu.
+            </p>
           </div>
 
           <div>

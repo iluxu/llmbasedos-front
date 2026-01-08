@@ -3,6 +3,18 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Capabilities | LLMBasedOS',
   description: 'Operational capabilities and building blocks for LLMBasedOS arcs and sentinels.',
+  alternates: {
+    canonical: '/utility',
+  },
+  openGraph: {
+    title: 'Capabilities | LLMBasedOS',
+    description: 'Operational capabilities and building blocks for LLMBasedOS arcs and sentinels.',
+    url: '/utility',
+  },
+  twitter: {
+    title: 'Capabilities | LLMBasedOS',
+    description: 'Operational capabilities and building blocks for LLMBasedOS arcs and sentinels.',
+  },
 };
 
 export default function UtilityPage() {

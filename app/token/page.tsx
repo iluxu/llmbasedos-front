@@ -4,6 +4,18 @@ import { TOKEN_ADDRESS, OWNER_ADDRESS, TOKEN_EXPLORER_URL } from '@/lib/chain';
 export const metadata: Metadata = {
   title: 'Platform | LLMBasedOS',
   description: 'Architecture and operating model for the LLMBasedOS agent ops platform.',
+  alternates: {
+    canonical: '/token',
+  },
+  openGraph: {
+    title: 'Platform | LLMBasedOS',
+    description: 'Architecture and operating model for the LLMBasedOS agent ops platform.',
+    url: '/token',
+  },
+  twitter: {
+    title: 'Platform | LLMBasedOS',
+    description: 'Architecture and operating model for the LLMBasedOS agent ops platform.',
+  },
 };
 
 export default function TokenPage() {

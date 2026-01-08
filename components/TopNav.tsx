@@ -10,6 +10,7 @@ const navItems = [
   { label: 'Install', href: '/#install' },
   { label: 'Platform', href: '/token' },
   { label: 'Capabilities', href: '/utility' },
+  { label: 'Use Cases', href: '/#use-cases' },
   { label: 'Roadmap', href: '/roadmap' },
   { label: 'Docs', href: '/docs' },
 ];
@@ -61,7 +62,7 @@ export function TopNav() {
               href="/#contact"
               className="px-4 py-2 rounded-full bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition-colors"
             >
-              Request Access
+              Book a demo
             </a>
           </div>
 
@@ -108,7 +109,7 @@ export function TopNav() {
               href="/#contact"
               className="mt-3 inline-flex items-center justify-center px-4 py-2 rounded-full bg-slate-900 text-white text-sm font-semibold"
             >
-              Request Access
+              Book a demo
             </a>
           </div>
         )}

@@ -4,6 +4,18 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Roadmap | LLMBasedOS',
   description: 'Roadmap and milestones for LLMBasedOS agent operations platform.',
+  alternates: {
+    canonical: '/roadmap',
+  },
+  openGraph: {
+    title: 'Roadmap | LLMBasedOS',
+    description: 'Roadmap and milestones for LLMBasedOS agent operations platform.',
+    url: '/roadmap',
+  },
+  twitter: {
+    title: 'Roadmap | LLMBasedOS',
+    description: 'Roadmap and milestones for LLMBasedOS agent operations platform.',
+  },
 };
 
 export default function RoadmapPage() {

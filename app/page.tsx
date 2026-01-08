@@ -1,6 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { TOKEN_ADDRESS, TOKEN_EXPLORER_URL } from '@/lib/chain';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    url: '/',
+  },
+};
 
 export default function Home() {
   return (
@@ -24,6 +34,9 @@ export default function Home() {
               The local-first OS runtime for autonomous agents.
               Build pipelines that move from signal to action.
             </p>
+            <p className="mt-3 text-base md:text-lg text-slate-500 max-w-3xl mx-auto">
+              Le runtime local-first pour des agents autonomes. Des signaux aux actions, en production.
+            </p>
 
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <a
@@ -33,6 +46,12 @@ export default function Home() {
                 className="px-8 py-4 rounded-full bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-all hover:scale-105 shadow-lg shadow-slate-900/20"
               >
                 Get Started
+              </a>
+              <a
+                href="/#use-cases"
+                className="px-8 py-4 rounded-full border-2 border-slate-200 bg-white text-slate-800 font-semibold hover:border-slate-300 hover:bg-slate-50 transition-all"
+              >
+                See Use Cases
               </a>
               <Link
                 href="/docs"
@@ -53,6 +72,9 @@ export default function Home() {
             <h2 className="text-3xl md:text-5xl font-display font-bold">
               Compatible with Codex & Claude Code
             </h2>
+            <p className="mt-2 text-sm uppercase tracking-wide text-slate-500">
+              Compatible avec Codex et Claude Code
+            </p>
             <p className="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
               Use LLMBasedOS as a Skill in your favorite AI coding assistants.
               All MCP arcs are accessible directly from your terminal.
@@ -121,15 +143,18 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="text-primary-600 font-semibold text-sm uppercase tracking-wider mb-3">What is it?</p>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">
-                An OS for your AI agents
-              </h2>
-              <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-                LLMBasedOS is a local-first runtime that lets you build, deploy, and operate
-                autonomous agent pipelines. Connect to real-world data sources, process signals,
-                and take action—all through MCP.
-              </p>
+            <p className="text-primary-600 font-semibold text-sm uppercase tracking-wider mb-3">What is it?</p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">
+              An OS for your AI agents
+            </h2>
+            <p className="mt-3 text-sm uppercase tracking-wide text-slate-500">
+              Un OS pour orchestrer vos agents IA
+            </p>
+            <p className="mt-6 text-lg text-slate-600 leading-relaxed">
+              LLMBasedOS is a local-first runtime that lets you build, deploy, and operate
+              autonomous agent pipelines. Connect to real-world data sources, process signals,
+              and take action—all through MCP.
+            </p>
 
               <div className="mt-8 space-y-4">
                 <FeatureRow
@@ -170,6 +195,9 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">
               Up and running in minutes
             </h2>
+            <p className="mt-2 text-sm uppercase tracking-wide text-slate-500">
+              Installation rapide en quelques minutes
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -249,6 +277,9 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">
               Real pipelines, not demos
             </h2>
+            <p className="mt-2 text-sm uppercase tracking-wide text-slate-500">
+              Pipelines reels, pas des demos
+            </p>
             <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
               Production-ready arcs for marketplace arbitrage, social intel, and market signals.
             </p>
@@ -300,6 +331,99 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Use Cases */}
+      <section id="use-cases" className="relative py-20 bg-slate-950 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(249,115,22,0.25),transparent_55%),radial-gradient(circle_at_bottom_left,rgba(20,184,166,0.2),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.96),rgba(15,23,42,0.98))]" />
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-primary-300 font-semibold text-sm uppercase tracking-wider mb-3">Use Cases</p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold">
+              Case studies, not just features
+            </h2>
+            <p className="mt-2 text-sm uppercase tracking-wide text-slate-400">
+              Etudes de cas et scenarios composites
+            </p>
+            <p className="mt-4 text-lg text-slate-300 max-w-2xl mx-auto">
+              Composite scenarios built from active pipeline designs. Swap in your goals and data sources.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-6">
+            <CaseStudyCard
+              title="Marketplace Arbitrage Desk"
+              subtitle="Resale / arbitrage"
+              description="Track saved searches, score listings, and route alerts to operators."
+              signals={[
+                'mcp.vinted.watch_start + filters',
+                'OCR + brand tagging',
+                'Slack / Telegram delivery',
+              ]}
+              outcome="Goal: first-to-alert within minutes of a new listing."
+            />
+            <CaseStudyCard
+              title="Brand Safety Watch"
+              subtitle="Social intelligence"
+              description="Monitor stories and reels, classify risk, and retain audit trails."
+              signals={[
+                'mcp.instagram.scrape + OCR',
+                'Risk scoring + dedupe',
+                'EventBus + compliance logs',
+              ]}
+              outcome="Goal: same-day escalation with traceable evidence."
+            />
+            <CaseStudyCard
+              title="Market Signals Ops"
+              subtitle="Trading intelligence"
+              description="Normalize prediction market data and trigger downstream actions."
+              signals={[
+                'Market polling + alerts',
+                'Signal normalization',
+                'Webhook routing',
+              ]}
+              outcome="Goal: consistent signal quality with fewer false positives."
+            />
+          </div>
+
+          <div className="mt-12 grid lg:grid-cols-2 gap-6">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="text-xs uppercase tracking-wide text-slate-400 mb-3">Composite feedback</p>
+              <p className="text-lg font-semibold text-white">
+                "We needed a single runtime for signals, enrichment, and delivery. LLMBasedOS lets us
+                ship a production pipeline without rebuilding infra."
+              </p>
+              <p className="mt-3 text-sm text-slate-400">
+                Synthesized from pilot conversations. Replace with your own customer proof.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="text-xs uppercase tracking-wide text-slate-400 mb-3">Operator playbook</p>
+              <p className="text-lg font-semibold text-white">
+                "The biggest win is uptime: sentinels stay alive, alerts are deduped, and every action is logged."
+              </p>
+              <p className="mt-3 text-sm text-slate-400">
+                Example narrative to illustrate how teams describe outcomes.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <a
+              href="/#contact"
+              className="px-7 py-3 rounded-full bg-primary-500 text-slate-900 font-semibold hover:bg-primary-400 transition-colors"
+            >
+              Plan a Pilot
+            </a>
+            <Link
+              href="/docs"
+              className="px-7 py-3 rounded-full border border-white/20 text-white font-semibold hover:border-white/40 transition-colors"
+            >
+              Read the docs
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Token Section */}
       <section id="token" className="py-20 bg-[#f8f6f1]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -312,6 +436,9 @@ export default function Home() {
                 </h2>
                 <p className="mt-4 text-lg text-slate-600">
                   The token anchors long-term alignment and future access primitives.
+                </p>
+                <p className="mt-2 text-sm text-slate-500">
+                  Le token ancre l'alignement long terme et les futurs acces.
                 </p>
                 <a
                   href={TOKEN_EXPLORER_URL}
@@ -351,12 +478,15 @@ export default function Home() {
           <p className="mt-4 text-lg text-slate-600">
             Tell us your use case. We'll design the arcs, sentinels, and delivery.
           </p>
+          <p className="mt-2 text-sm text-slate-500">
+            Decrivez votre cas d'usage. Nous concevons les arcs, sentinels et la diffusion.
+          </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
               href="mailto:hello@llmbasedos.com"
               className="px-8 py-4 rounded-full bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-all hover:scale-105 shadow-lg shadow-slate-900/20"
             >
-              Contact Us
+              Book a demo
             </a>
             <a
               href="https://github.com/iluxu/llmbasedos"
@@ -406,6 +536,38 @@ function CapabilityCard({ title, description, tags }: { title: string; descripti
           </span>
         ))}
       </div>
+    </div>
+  );
+}
+
+function CaseStudyCard({
+  title,
+  subtitle,
+  description,
+  signals,
+  outcome,
+}: {
+  title: string;
+  subtitle: string;
+  description: string;
+  signals: string[];
+  outcome: string;
+}) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg">
+      <p className="text-xs uppercase tracking-wide text-slate-400">{subtitle}</p>
+      <h3 className="text-xl font-semibold text-white mt-2">{title}</h3>
+      <p className="mt-3 text-slate-300">{description}</p>
+      <ul className="mt-4 space-y-2 text-sm text-slate-300">
+        {signals.map((signal) => (
+          <li key={signal} className="flex items-start gap-2">
+            <span className="text-primary-300 mt-0.5">-</span>
+            <span>{signal}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-4 text-xs uppercase tracking-wide text-slate-400">Outcome target</p>
+      <p className="text-sm text-white">{outcome}</p>
     </div>
   );
 }

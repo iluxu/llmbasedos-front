@@ -7,6 +7,18 @@ import Image from 'next/image';
 export const metadata: Metadata = {
   title: 'Documentation | LLMBasedOS',
   description: 'Integration guides, MCP reference, and operational notes for LLMBasedOS.',
+  alternates: {
+    canonical: '/docs',
+  },
+  openGraph: {
+    title: 'Documentation | LLMBasedOS',
+    description: 'Integration guides, MCP reference, and operational notes for LLMBasedOS.',
+    url: '/docs',
+  },
+  twitter: {
+    title: 'Documentation | LLMBasedOS',
+    description: 'Integration guides, MCP reference, and operational notes for LLMBasedOS.',
+  },
 };
 
 export default function DocsPage() {
@@ -43,15 +55,22 @@ export default function DocsPage() {
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
             Everything you need to integrate LLMBasedOS with your workflow
           </p>
+          <p className="text-sm text-slate-500 mt-3">
+            Tout le necessaire pour integrer LLMBasedOS a vos workflows.
+          </p>
         </div>
 
         {/* Codex & Claude Code Integration - MAIN SECTION */}
         <section className="mb-16">
-          <h2 className="text-3xl font-display font-bold text-slate-900 mb-6">Codex & Claude Code Integration</h2>
+          <h2 className="text-3xl font-display font-bold text-slate-900 mb-2">Codex & Claude Code Integration</h2>
+          <p className="text-sm text-slate-500 mb-6">Integration Codex et Claude Code.</p>
           <div className="border border-slate-200 rounded-2xl p-8 bg-white shadow-lg">
             <p className="text-lg text-slate-600 mb-8">
               LLMBasedOS works as a Skill in both OpenAI Codex and Claude Code.
               Install it once and get access to all MCP arcs directly in your terminal.
+            </p>
+            <p className="text-sm text-slate-500 mb-8">
+              LLMBasedOS s'installe comme Skill et donne acces a tous les arcs MCP dans votre terminal.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -114,7 +133,8 @@ export default function DocsPage() {
 
         {/* Quick Reference */}
         <section className="mb-16">
-          <h2 className="text-3xl font-display font-bold text-slate-900 mb-6">Quick Reference</h2>
+          <h2 className="text-3xl font-display font-bold text-slate-900 mb-2">Quick Reference</h2>
+          <p className="text-sm text-slate-500 mb-6">Reference rapide.</p>
           <div className="border border-slate-200 rounded-2xl p-8 bg-white shadow-sm">
             <div className="grid md:grid-cols-2 gap-6">
               <ReferenceItem label="Gateway" value="MCP WebSocket (private)" />
@@ -128,10 +148,14 @@ export default function DocsPage() {
 
         {/* Full Stack Install */}
         <section className="mb-16">
-          <h2 className="text-3xl font-display font-bold text-slate-900 mb-6">Full Stack Install</h2>
+          <h2 className="text-3xl font-display font-bold text-slate-900 mb-2">Full Stack Install</h2>
+          <p className="text-sm text-slate-500 mb-6">Installation complete.</p>
           <div className="border border-slate-200 rounded-2xl p-8 bg-white shadow-sm">
             <p className="text-slate-600 text-lg mb-6">
               For running the complete LLMBasedOS stack locally or on a server.
+            </p>
+            <p className="text-sm text-slate-500 mb-6">
+              Pour executer l'ensemble du stack en local ou sur un serveur.
             </p>
 
             <div className="bg-slate-900 text-slate-100 rounded-xl p-6 font-mono text-sm space-y-2">
@@ -179,10 +203,14 @@ export default function DocsPage() {
 
         {/* MCP Methods */}
         <section className="mb-16">
-          <h2 className="text-3xl font-display font-bold text-slate-900 mb-6">MCP Methods</h2>
+          <h2 className="text-3xl font-display font-bold text-slate-900 mb-2">MCP Methods</h2>
+          <p className="text-sm text-slate-500 mb-6">Methodes MCP disponibles.</p>
           <div className="border border-slate-200 rounded-2xl p-8 bg-white shadow-sm">
             <p className="text-slate-600 mb-6">
               These methods are available when you connect to the MCP gateway or install as a Skill.
+            </p>
+            <p className="text-sm text-slate-500 mb-6">
+              Ces methodes sont disponibles via le gateway MCP ou l'installation Skill.
             </p>
 
             <div className="space-y-4">
@@ -234,10 +262,14 @@ export default function DocsPage() {
 
         {/* Token */}
         <section className="mb-16">
-          <h2 className="text-3xl font-display font-bold text-slate-900 mb-6">Token</h2>
+          <h2 className="text-3xl font-display font-bold text-slate-900 mb-2">Token</h2>
+          <p className="text-sm text-slate-500 mb-6">Reference du token.</p>
           <div className="border border-slate-200 rounded-2xl p-8 bg-white shadow-sm">
             <p className="text-slate-600 mb-6">
               The LLMBasedOS token anchors alignment and long-term access primitives.
+            </p>
+            <p className="text-sm text-slate-500 mb-6">
+              Le token LLMBasedOS ancre l'alignement et les acces long terme.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <ReferenceItem label="Token Contract" value={TOKEN_ADDRESS} copyable />
@@ -261,7 +293,8 @@ export default function DocsPage() {
 
         {/* Security */}
         <section className="mb-16">
-          <h2 className="text-3xl font-display font-bold text-slate-900 mb-6">Security</h2>
+          <h2 className="text-3xl font-display font-bold text-slate-900 mb-2">Security</h2>
+          <p className="text-sm text-slate-500 mb-6">Securite et conformite.</p>
           <div className="border border-slate-200 rounded-2xl p-8 bg-white shadow-sm">
             <ul className="space-y-4 text-slate-600">
               <li className="flex items-start gap-3">
@@ -294,7 +327,8 @@ export default function DocsPage() {
 
         {/* FAQ */}
         <section>
-          <h2 className="text-3xl font-display font-bold text-slate-900 mb-6">FAQ</h2>
+          <h2 className="text-3xl font-display font-bold text-slate-900 mb-2">FAQ</h2>
+          <p className="text-sm text-slate-500 mb-6">Questions frequentes.</p>
           <FAQ items={faqItems} />
         </section>
       </div>

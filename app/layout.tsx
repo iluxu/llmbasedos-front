@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Space_Grotesk, Fraunces, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
 import { TopNav } from '@/components/TopNav';
@@ -28,6 +29,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'LLMBasedOS',
     description: 'Agent ops OS for MCP arcs, sentinels, and real-world workflows.',
+    url: 'https://llmbasedos.com',
+    siteName: 'LLMBasedOS',
     type: 'website',
     locale: 'en_US',
     images: [{
@@ -41,6 +44,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'LLMBasedOS',
     description: 'Agent ops OS for MCP arcs, sentinels, and real-world workflows.',
+    site: '@llmbasedos',
     images: [{
       url: '/og-image.svg',
       width: 1200,
@@ -55,6 +59,27 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'LLMBasedOS',
+  url: 'https://llmbasedos.com',
+  logo: 'https://llmbasedos.com/og-image.svg',
+  sameAs: ['https://github.com/iluxu/llmbasedos', 'https://x.com/llmbasedos'],
+};
+
+const websiteStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'LLMBasedOS',
+  url: 'https://llmbasedos.com',
+  inLanguage: ['en', 'fr'],
+  publisher: {
+    '@type': 'Organization',
+    name: 'LLMBasedOS',
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -63,6 +88,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${fraunces.variable} ${ibmMono.variable}`}>
       <body className="antialiased min-h-screen flex flex-col">
+        <Script
+          id="ld-organization"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationStructuredData) }}
+        />
+        <Script
+          id="ld-website"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteStructuredData) }}
+        />
         <TopNav />
         <main className="flex-1">{children}</main>
         <Footer />
