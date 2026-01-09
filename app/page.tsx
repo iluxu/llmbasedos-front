@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
-import { TOKEN_ADDRESS, TOKEN_EXPLORER_URL } from '@/lib/chain';
+import { TOKEN_ADDRESS, TOKEN_EXPLORER_URL, OWNER_ADDRESS, DEPLOYMENT_TX_URL } from '@/lib/chain';
 import { CodeBlock } from '@/components/CodeBlock';
 import { FAQ } from '@/components/FAQ';
 
@@ -449,10 +449,10 @@ export default function Home() {
                   LLMBasedOS Token on Base
                 </h2>
                 <p className="mt-4 text-lg text-slate-600">
-                  The token anchors long-term alignment and future access primitives.
+                  The LLMBasedOS token anchors alignment and long-term access primitives.
                 </p>
                 <p className="mt-2 text-sm text-slate-500">
-                  Le token ancre l'alignement long terme et les futurs acces.
+                  Le token LLMBasedOS ancre l'alignement et les accès long terme.
                 </p>
                 <a
                   href={TOKEN_EXPLORER_URL}
@@ -469,12 +469,23 @@ export default function Home() {
               <div className="rounded-xl bg-slate-50 p-6 border border-slate-200">
                 <div className="space-y-4">
                   <div>
-                    <p className="text-xs uppercase tracking-wider text-slate-500 mb-1">Contract Address</p>
+                    <p className="text-xs uppercase tracking-wider text-slate-500 mb-1">Token Contract</p>
                     <p className="font-mono text-sm text-slate-700 break-all">{TOKEN_ADDRESS}</p>
                   </div>
                   <div>
-                    <p className="text-xs uppercase tracking-wider text-slate-500 mb-1">Network</p>
-                    <p className="font-semibold text-slate-900">Base</p>
+                    <p className="text-xs uppercase tracking-wider text-slate-500 mb-1">Owner Address</p>
+                    <p className="font-mono text-sm text-slate-700 break-all">{OWNER_ADDRESS}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-slate-500 mb-1">Deployment Tx</p>
+                    <a
+                      href={DEPLOYMENT_TX_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-sm text-primary-600 hover:text-primary-700 break-all"
+                    >
+                      View transaction →
+                    </a>
                   </div>
                 </div>
               </div>

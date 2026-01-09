@@ -8,7 +8,13 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "WebFetch(domain:llmbasedos-front.pages.dev)"
+      "WebFetch(domain:llmbasedos-front.pages.dev)",
+      "Bash(npx tsc:*)",
+      "Bash(timeout 15 npm run dev)",
+      "WebFetch(domain:llmbasedos.com)",
+      "Bash(npx eslint:*)",
+      "Bash(node -e:*)",
+      "Bash(node --check:*)"
     ]
   }
 }
