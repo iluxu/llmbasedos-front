@@ -2,6 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { TOKEN_ADDRESS, TOKEN_EXPLORER_URL } from '@/lib/chain';
+import { CodeBlock } from '@/components/CodeBlock';
+import { FAQ } from '@/components/FAQ';
 
 export const metadata: Metadata = {
   alternates: {
@@ -65,7 +67,7 @@ export default function Home() {
       </section>
 
       {/* Compatible With Section - MAIN HIGHLIGHT */}
-      <section id="compatibility" className="py-20 bg-slate-900 text-white">
+      <section id="compatibility" className="py-20 bg-slate-900 text-white scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-primary-400 font-semibold text-sm uppercase tracking-wider mb-3">Works With Your Tools</p>
@@ -127,11 +129,12 @@ export default function Home() {
             <div className="rounded-2xl overflow-hidden border border-slate-700 shadow-2xl">
               <Image
                 src="/demo_mcp.gif"
-                alt="LLMBasedOS MCP Integration Demo"
+                alt="Démonstration de l'intégration MCP avec Claude Code montrant les commandes disponibles et l'exécution en temps réel"
                 width={800}
                 height={500}
                 className="w-full"
                 unoptimized
+                priority
               />
             </div>
           </div>
@@ -188,7 +191,7 @@ export default function Home() {
       </section>
 
       {/* Install Section */}
-      <section id="install" className="py-20 bg-[#f8f6f1]">
+      <section id="install" className="py-20 bg-[#f8f6f1] scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-primary-600 font-semibold text-sm uppercase tracking-wider mb-3">Get Started</p>
@@ -215,11 +218,13 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-slate-900 text-slate-100 rounded-xl p-5 font-mono text-sm space-y-2">
-                <p><span className="text-slate-500">$</span> git clone https://github.com/iluxu/llmbasedos.git</p>
-                <p><span className="text-slate-500">$</span> cd llmbasedos</p>
-                <p><span className="text-slate-500">$</span> docker compose up -d</p>
-              </div>
+              <CodeBlock
+                commands={[
+                  'git clone https://github.com/iluxu/llmbasedos.git',
+                  'cd llmbasedos',
+                  'docker compose up -d',
+                ]}
+              />
 
               <a
                 href="https://github.com/iluxu/llmbasedos"
@@ -248,12 +253,14 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-slate-900 text-slate-100 rounded-xl p-5 font-mono text-sm space-y-2">
-                <p><span className="text-slate-500"># Codex</span></p>
-                <p><span className="text-slate-500">$</span> codex install llmbasedos</p>
-                <p className="pt-2"><span className="text-slate-500"># Claude Code</span></p>
-                <p><span className="text-slate-500">$</span> claude mcp add llmbasedos</p>
-              </div>
+              <CodeBlock
+                commands={[
+                  { text: '# Codex', isComment: true },
+                  'codex install llmbasedos',
+                  { text: '# Claude Code', isComment: true },
+                  'claude mcp add llmbasedos',
+                ]}
+              />
 
               <Link
                 href="/docs"
@@ -270,7 +277,7 @@ export default function Home() {
       </section>
 
       {/* Capabilities */}
-      <section id="capabilities" className="py-20">
+      <section id="capabilities" className="py-20 scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-primary-600 font-semibold text-sm uppercase tracking-wider mb-3">Capabilities</p>
@@ -322,7 +329,7 @@ export default function Home() {
           <div className="mt-12 rounded-2xl overflow-hidden border border-slate-200 shadow-xl max-w-3xl mx-auto">
             <Image
               src="/vinted_mcp_capabilities.png"
-              alt="Vinted MCP Capabilities"
+              alt="Capture d'écran des capacités MCP Vinted: recherche, filtres, alertes temps réel et surveillance de marché"
               width={1200}
               height={700}
               className="w-full"
@@ -332,7 +339,7 @@ export default function Home() {
       </section>
 
       {/* Use Cases */}
-      <section id="use-cases" className="relative py-20 bg-slate-950 text-white overflow-hidden">
+      <section id="use-cases" className="relative py-20 bg-slate-950 text-white overflow-hidden scroll-mt-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(249,115,22,0.25),transparent_55%),radial-gradient(circle_at_bottom_left,rgba(20,184,166,0.2),transparent_50%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.96),rgba(15,23,42,0.98))]" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -402,8 +409,8 @@ export default function Home() {
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <p className="text-xs uppercase tracking-wide text-slate-400 mb-3">Customer proof</p>
               <p className="text-lg font-semibold text-white">
-                "Implementer votre solution a ete un jeu d'enfant, et les resultats parlent d'eux-memes.
-                Nous avons constate une augmentation de 40% dans l'efficacite de notre traitement des donnees."
+                "Implémenter votre solution a été un jeu d'enfant, et les résultats parlent d'eux-mêmes.
+                Nous avons constaté une augmentation de 40% dans l'efficacité de notre traitement des données."
               </p>
               <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-slate-300">
                 <span className="font-semibold text-white">Emma Roberts</span>
@@ -432,7 +439,7 @@ export default function Home() {
       </section>
 
       {/* Token Section */}
-      <section id="token" className="py-20 bg-[#f8f6f1]">
+      <section id="token" className="py-20 bg-[#f8f6f1] scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-slate-200 bg-white p-10 shadow-lg">
             <div className="grid lg:grid-cols-2 gap-10 items-center">
@@ -476,8 +483,47 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 scroll-mt-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-primary-600 font-semibold text-sm uppercase tracking-wider mb-3">FAQ</p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">
+              Frequently Asked Questions
+            </h2>
+            <p className="mt-2 text-sm uppercase tracking-wide text-slate-500">
+              Questions fréquentes
+            </p>
+          </div>
+          <FAQ
+            items={[
+              {
+                question: "What is LLMBasedOS? / Qu'est-ce que LLMBasedOS ?",
+                answer:
+                  "LLMBasedOS is a local-first runtime for autonomous AI agents. It provides MCP-native arcs (modular capabilities), sentinels (real-time watchers), and multi-model routing to build production-ready agent pipelines. — Un runtime local-first pour agents IA autonomes avec arcs MCP, sentinels et routage multi-modèles.",
+              },
+              {
+                question: "Do I need to self-host? / Dois-je héberger moi-même ?",
+                answer:
+                  "You can run the full stack locally with Docker, or just use the MCP integration with Claude Code or Codex. The MCP-only mode requires no infrastructure—just install and connect. — Vous pouvez utiliser Docker ou simplement l'intégration MCP sans infrastructure.",
+              },
+              {
+                question: "What data sources are supported? / Quelles sources de données ?",
+                answer:
+                  "Out of the box: Vinted marketplace, Instagram stories/reels with OCR, and prediction markets. You can also wrap any API or internal data source into a custom arc. — Vinted, Instagram (stories/reels + OCR), marchés prédictifs, et vos propres APIs.",
+              },
+              {
+                question: "Is there a token? / Y a-t-il un token ?",
+                answer:
+                  "Yes, the LLMBasedOS token on Base anchors long-term alignment and future access primitives. View the contract on Basescan for details. — Oui, le token sur Base ancre l'alignement long terme et les futurs accès.",
+              },
+            ]}
+          />
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-20 scroll-mt-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">
             Ready to wire your agents to the real world?
@@ -486,7 +532,7 @@ export default function Home() {
             Tell us your use case. We'll design the arcs, sentinels, and delivery.
           </p>
           <p className="mt-2 text-sm text-slate-500">
-            Decrivez votre cas d'usage. Nous concevons les arcs, sentinels et la diffusion.
+            Décrivez votre cas d'usage. Nous concevons les arcs, sentinels et la diffusion.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
