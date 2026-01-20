@@ -22,13 +22,13 @@ const ibmMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'LLMBasedOS | Agent Ops Operating System',
-  description: 'LLMBasedOS builds agent operations: MCP arcs, sentinels, and workflows that turn signals into actions.',
-  keywords: ['LLMBasedOS', 'agent OS', 'MCP', 'sentinels', 'arcs', 'automation', 'AI', 'ops'],
+  title: 'LLMBasedOS | The Operating System for AI Agents',
+  description: 'Infrastructure layer that turns any LLM into an autonomous agent with persistent memory, event-driven workflows, and real-world actions. Like Linux for AI.',
+  keywords: ['LLMBasedOS', 'AI agents', 'MCP', 'Claude Code', 'autonomous agents', 'LLM infrastructure', 'persistent memory', 'AI automation'],
   authors: [{ name: 'LLMBasedOS' }],
   openGraph: {
     title: 'LLMBasedOS',
-    description: 'Agent ops OS for MCP arcs, sentinels, and real-world workflows.',
+    description: 'Infrastructure layer that turns any LLM into an autonomous agent with persistent memory, event-driven workflows, and real-world actions.',
     url: 'https://llmbasedos.com',
     siteName: 'LLMBasedOS',
     type: 'website',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'LLMBasedOS',
-    description: 'Agent ops OS for MCP arcs, sentinels, and real-world workflows.',
+    description: 'Infrastructure layer that turns any LLM into an autonomous agent with persistent memory, event-driven workflows, and real-world actions.',
     site: '@llmbasedos',
     images: [{
       url: '/og-image.svg',
